@@ -7,18 +7,37 @@ public class VaraDePescar : MonoBehaviour
     public GameObject Pez;
     public GameObject PezPescado;
     public Transform InteractionZone;
+    public string ColorCanaPescar;
+    public int Puntaje=0;
 
 
     void Update()
     {
-        
-        if(Pez !=null )
+        // valida si ya tiene un objeto en el collider
+        if(Pez !=null && Pez.GetComponent<JuegoPescar>().Pick == true && PezPescado==null)
         {
             Pez.transform.SetParent(InteractionZone);
             Pez.GetComponent<Rigidbody>().useGravity= false;
             Pez.GetComponent<Rigidbody>().isKinematic= true;
 
+            if(ColorCanaPescar== Pez.GetComponent<JuegoPescar>().Color)
+            {                
+                Puntaje+= 2;
+            } else  if(ColorCanaPescar!= Pez.GetComponent<JuegoPescar>().Color)
+            {                
+                Puntaje-= 3;
+            } 
+            
+           Destroy(Pez);
         }
+        else if (PezPescado!=null)
+        {
+
+
+
+        }
+
+        
 
     }
 }

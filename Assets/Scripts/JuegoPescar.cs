@@ -5,13 +5,15 @@ using UnityEngine;
 public class JuegoPescar : MonoBehaviour
 {
 
-    GameObject canaPescar;
-    public string x;
+    public GameObject canaPescar;
+    public bool Pick= false;
+    public string Color;
 
     // Start is called before the first frame update
     void Start()
     {
-        canaPescar = GameObject.Find("mjolnir");
+        //Necesita añadir tags dependiendo del color
+        Color = this.gameObject.tag;
     }
 
 
@@ -19,7 +21,15 @@ public class JuegoPescar : MonoBehaviour
     void OnTriggerEnter (Collider other)
     {
        
-       other.GetComponentInParent<VaraDePescar>().Pez = this.gameObject;
-
+        other.GetComponentInParent<VaraDePescar>().Pez = this.gameObject;
+        Pick = true;
     } 
+
+     void OnTriggerExit (Collider other)
+     {
+
+        other.GetComponentInParent<VaraDePescar>().Pez = null;
+        Pick = false;
+     }
+
 }
