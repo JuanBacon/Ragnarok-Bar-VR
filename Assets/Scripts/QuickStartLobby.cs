@@ -13,6 +13,8 @@ public class QuickStartLobby : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject CancelButton;
     [SerializeField]
+    private GameObject SalirButton;
+    [SerializeField]
     private int RoomSize;
 
    
@@ -21,6 +23,7 @@ public class QuickStartLobby : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         StartButton.SetActive(true);
+        SalirButton.SetActive(true);
         LoadingButton.SetActive(false);
         
     }
@@ -58,6 +61,7 @@ public class QuickStartLobby : MonoBehaviourPunCallbacks
     {
         CancelButton.SetActive(false);
         StartButton.SetActive(true);
+        SalirButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
     }
 }
