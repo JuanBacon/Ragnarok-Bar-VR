@@ -16,12 +16,20 @@ public class GameSetupController : MonoBehaviour
     private void createPlayer()
     {
         Debug.Log("Creating player");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPreFabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        GameObject jugador = PhotonNetwork.Instantiate(Path.Combine("PhotonPreFabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        if (camera != null)
+        {
+            ControlCamara followScript = camera.GetComponent("ControlCamara") as ControlCamara;
+            if (followScript != null)
+            {
+                followScript.target = jugador;
+            }
+        }
+
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
