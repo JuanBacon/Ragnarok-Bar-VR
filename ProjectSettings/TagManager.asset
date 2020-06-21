@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rojo
   - Azul
+  - Verde
   layers:
   - Default
   - TransparentFX

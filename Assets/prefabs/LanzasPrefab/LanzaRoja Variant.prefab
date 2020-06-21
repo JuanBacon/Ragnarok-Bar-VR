@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1501471697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1501471698}
+  - component: {fileID: 1501471699}
+  m_Layer: 0
+  m_Name: PuntaDeLanza
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1501471698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501471697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1423343287214734006}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1501471699
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501471697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08489551, y: 0.40754998, z: 0.0913311}
+  m_Center: {x: 0.028947342, y: 0.9655469, z: -0.106638886}
+--- !u!114 &495586132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710009144236574885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad851f18b8bef44acf146c05aa6eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pez: {fileID: 0}
+  PezPescado: {fileID: 0}
+  InteractionZone: {fileID: 1501471698}
+  ColorCanaPescar: Rojo
+  Puntaje: 0
+--- !u!1001 &6249324901405512108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.445
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.7133949
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7133949
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.7133949
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_Name
+      value: LanzaRoja
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405317065323677370, guid: 8242a303226ea414fbdafafd5b627943,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1b68388b41410b4d83556e52b98def1, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8242a303226ea414fbdafafd5b627943, type: 3}
+--- !u!1 &2710009144236574885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8242a303226ea414fbdafafd5b627943,
+    type: 3}
+  m_PrefabInstance: {fileID: 6249324901405512108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1423343287214734006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8242a303226ea414fbdafafd5b627943,
+    type: 3}
+  m_PrefabInstance: {fileID: 6249324901405512108}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5854561832084712337
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6048306536225056376, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_Name
+      value: LanzaVerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083137140465924555, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 54159a910349aef4e8f2e77d12994b0e, type: 2}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.445
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328692943677084779, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535451912225170825, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39,
+        type: 3}
+      propertyPath: ColorCanaPescar
+      value: Verde
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e44c5d3416dc1a4d8d2a58891a6bb39, type: 3}
