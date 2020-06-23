@@ -26,6 +26,7 @@ public class MovRandom : MonoBehaviour
         SegundosMov= 3f;
         }
         transform.Translate(NewPos*Time.deltaTime);
+       
         
     }
 

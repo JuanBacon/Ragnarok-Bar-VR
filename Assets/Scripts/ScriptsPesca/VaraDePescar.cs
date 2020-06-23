@@ -9,7 +9,7 @@ public class VaraDePescar : MonoBehaviour
     public Transform InteractionZone;
     public string ColorCanaPescar;
     public int Puntaje=0;
-
+    public GameObject SeFue;
 
     void Update()
     {
@@ -29,6 +29,7 @@ public class VaraDePescar : MonoBehaviour
             } 
             
            Destroy(Pez);
+           SeFue.GetComponent<GanadorPesca>().Cont+=1;
         }
         else if (PezPescado!=null)
         {
