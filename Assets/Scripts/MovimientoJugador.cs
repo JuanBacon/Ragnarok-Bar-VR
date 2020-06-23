@@ -10,6 +10,8 @@ public class MovimientoJugador : MonoBehaviour, IPunObservable
     [SerializeField] private string EntradaVertical;
     [SerializeField] private float velocidad;
     private CharacterController Controlador;
+    //Acción jugador
+    [SerializeField] private string AccionJugador;
     //Camara
     [SerializeField] GameObject CamaraJugador;
     [SerializeField] private string inputMouseX, inputMouseY;
@@ -53,7 +55,7 @@ public class MovimientoJugador : MonoBehaviour, IPunObservable
         {
             return;
         }
-        
+            //Movimiento
             float horizontal = Input.GetAxis(EntradaHorizontal) * velocidad;
             float vertical = Input.GetAxis(EntradaVertical) * velocidad;
 
@@ -82,7 +84,17 @@ public class MovimientoJugador : MonoBehaviour, IPunObservable
             }
         transform.Rotate(Vector3.up * mouseX);
         CamaraJugador.transform.Rotate(Vector3.left * mouseY);
-        
+
+        GameObject proyectilPrefab = Resources.Load("proyectil") as GameObject;
+
+        if (Input.GetButton(AccionJugador))
+        {
+            GameObject proyectil = Instantiate(proyectilPrefab) as GameObject;
+            proyectil.transform.position = transform.position + new Vector3(0,3,0) +Camera.main.transform.forward * 2;
+            Rigidbody rb = proyectil.GetComponent<Rigidbody>();
+            rb.velocity = Camera.main.transform.forward * 40;
+
+        }
     }
     private void PararRotacionEjeX(float valor)
     {

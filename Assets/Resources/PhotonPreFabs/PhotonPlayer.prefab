@@ -69,6 +69,7 @@ MonoBehaviour:
   EntradaHorizontal: Horizontal
   EntradaVertical: Vertical
   velocidad: 20
+  AccionJugador: Fire1
   CamaraJugador: {fileID: 0}
   inputMouseX: Mouse X
   inputMouseY: Mouse Y
