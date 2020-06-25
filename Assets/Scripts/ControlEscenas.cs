@@ -9,7 +9,6 @@ public class ControlEscenas : MonoBehaviour
 {
     public void CargarEscenaJugar(){
         SceneManager.LoadScene(1);
-        //PhotonNetwork.LoadLevel(1);
     }
 
     public void SalirJuego()

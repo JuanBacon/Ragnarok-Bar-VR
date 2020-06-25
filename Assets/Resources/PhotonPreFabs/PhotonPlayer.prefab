@@ -69,10 +69,12 @@ MonoBehaviour:
   EntradaHorizontal: Horizontal
   EntradaVertical: Vertical
   velocidad: 20
+  AccionJugador: Fire1
   CamaraJugador: {fileID: 0}
   inputMouseX: Mouse X
   inputMouseY: Mouse Y
   sensibilidadMouse: 150
+  fireDelta: 0.5
 --- !u!114 &6018336373421450464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +110,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6018336373421450464}
   - {fileID: 4548278554344932642}
+  - {fileID: 6018336373421450464}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

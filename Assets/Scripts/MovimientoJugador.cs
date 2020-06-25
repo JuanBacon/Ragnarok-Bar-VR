@@ -10,23 +10,29 @@ public class MovimientoJugador : MonoBehaviour, IPunObservable
     [SerializeField] private string EntradaVertical;
     [SerializeField] private float velocidad;
     private CharacterController Controlador;
+    //Acción jugador
+    [SerializeField] private string AccionJugador;
     //Camara
     [SerializeField] GameObject CamaraJugador;
     [SerializeField] private string inputMouseX, inputMouseY;
     [SerializeField] private float sensibilidadMouse;
     private float topeEjeX;
-
     PhotonView photonView;
-    
+    //Controles minujuegos
+    //Beerpong
+    private GameObject turnoBeerpong;
+    public float fireDelta = 2.0F;
+    private float nextFire = 0.5F;
+    private float myTime = 0.0F;
 
-    
+
 
     private void Awake()
     {
         
         photonView = this.gameObject.GetComponent<PhotonView>();
         photonView.ObservedComponents.Add(this);
-
+        turnoBeerpong = GameObject.Find("Beerpong");
         if (!photonView.IsMine)
         {
             Debug.Log(" DISABLE CONTROLER ");
@@ -53,7 +59,7 @@ public class MovimientoJugador : MonoBehaviour, IPunObservable
         {
             return;
         }
-        
+            //Movimiento
             float horizontal = Input.GetAxis(EntradaHorizontal) * velocidad;
             float vertical = Input.GetAxis(EntradaVertical) * velocidad;
 
@@ -82,7 +88,29 @@ public class MovimientoJugador : MonoBehaviour, IPunObservable
             }
         transform.Rotate(Vector3.up * mouseX);
         CamaraJugador.transform.Rotate(Vector3.left * mouseY);
+
+        //GameObject proyectilPrefab = Resources.Load("proyectil") as GameObject;
+        myTime = myTime + Time.deltaTime;
+
         
+        
+    }
+    void OnTriggerStay(Collider obj)
+    {
+        if(obj.gameObject.tag == "beerpong")
+        {
+            if (Input.GetButton(AccionJugador) && myTime > nextFire)
+            {
+                nextFire = myTime + fireDelta;
+                GameObject proyectil = PhotonNetwork.Instantiate("proyectil", Vector3.zero, Quaternion.identity) as GameObject;
+                proyectil.transform.position = transform.position + new Vector3(0, 3, 0) + Camera.main.transform.forward * 2;
+                Rigidbody rb = proyectil.GetComponent<Rigidbody>();
+                rb.velocity = Camera.main.transform.forward * 40;
+
+                nextFire = nextFire - myTime;
+                myTime = 0.0f;
+            }
+        }
     }
     private void PararRotacionEjeX(float valor)
     {
