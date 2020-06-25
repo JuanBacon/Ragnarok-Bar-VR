@@ -68,82 +68,84 @@ public class Dardos : MonoBehaviour
         }
         //updatePos();
         Turnos.text = " Turno"+turnos;
-        
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (turnos <= 2)
         {
-            if (mode == Mode.Main)
+            if (Input.GetMouseButtonDown(0))
             {
-                mode = Mode.MainMotion;
-            }
-            else if (mode == Mode.MainMotion && progress == 0)
-            {
-
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                if (mode == Mode.Main)
                 {
-                    mode = Mode.Dart;
-                    GameObject dart = (GameObject)Instantiate(HachitaPro, hit.point + new Vector3(0, 0, -0.35f), Quaternion.Euler(Vector3.zero));
+                    mode = Mode.MainMotion;
+                }
+                else if (mode == Mode.MainMotion && progress == 0)
+                {
 
-                    dart.GetComponentInChildren<Animation>().Play("Lanzar");
-
-                    HachaActual = dart;
-                    Hachas.Enqueue(dart);
-                    Score score = decodeScore(hit.point);
-
-                    if (P1Turn)
+                    RaycastHit hit;
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                     {
-                        P1Score += score.Points;
-                        StatusTxt.text = "J1";
-                        P2Turn = false;
+                        mode = Mode.Dart;
+                        GameObject dart = (GameObject)Instantiate(HachitaPro, hit.point + new Vector3(0, 0, -0.35f), Quaternion.Euler(Vector3.zero));
+
+                        dart.GetComponentInChildren<Animation>().Play("Lanzar");
+
+                        HachaActual = dart;
+                        Hachas.Enqueue(dart);
+                        Score score = decodeScore(hit.point);
+
+                        if (P1Turn)
+                        {
+                            P1Score += score.Points;
+                            StatusTxt.text = "J1";
+                            P2Turn = false;
+                        }
+                        else
+                        {
+                            P2Score += score.Points;
+                            StatusTxt.text = "J2";
+                            P2Turn = false;
+                        }
+                        StatusTxt.text += " Puntaje " + score.Points + ".";
+
+                        if (Lanzamiento == Nlanzamientos.t3)
+                        {
+                            P1Turn = !P1Turn;
+                            StatusTxt.text += " Siguiente jugador";
+                            P2Turn = true;
+
+                            Lanzamiento = Nlanzamientos.t1;
+
+                        }
+
+
+                        else { Lanzamiento++; P2Turn = false; }
+
+                        if (P2Turn == true && P1Turn == true)
+                        {
+                            turnos++;
+
+                        }
+
                     }
-                    else
-                    {
-                        P2Score += score.Points;
-                        StatusTxt.text = "J2";
-                        P2Turn = false;
-                    }
-                    StatusTxt.text += " Puntaje " + score.Points + ".";
-
-                    if (Lanzamiento == Nlanzamientos.t3)
-                    {
-                        P1Turn = !P1Turn;
-                        StatusTxt.text += " Siguiente jugador";
-                        P2Turn = true;
-
-                        Lanzamiento = Nlanzamientos.t1;
-
-                    }
 
 
-                    else { Lanzamiento++; P2Turn = false; }
-
-                    if (P2Turn == true && P1Turn==true)
-                    {
-                        turnos++;
-
-                    }
 
                 }
-
-               
-
-            }
-            else if (mode == Mode.Dart && progress == 0)
-            {
-                mode = Mode.Main;
-                if (Lanzamiento == Nlanzamientos.t1)
+                else if (mode == Mode.Dart && progress == 0)
                 {
-                    while (Hachas.Count > 0)
+                    mode = Mode.Main;
+                    if (Lanzamiento == Nlanzamientos.t1)
                     {
-                        GameObject d = Hachas.Dequeue();
-                        d.GetComponentInChildren<Animation>().Play("Tirar"); ;
-                        Destroy(d, 1f);
+                        while (Hachas.Count > 0)
+                        {
+                            GameObject d = Hachas.Dequeue();
+                            d.GetComponentInChildren<Animation>().Play("Tirar"); ;
+                            Destroy(d, 1f);
+                        }
                     }
                 }
             }
-        }
+        }//Fin turnos
     }
     float smooth(float t)
     {
