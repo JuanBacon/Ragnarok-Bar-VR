@@ -66,11 +66,11 @@ public class Dardos : MonoBehaviour
         {
             current = mode;
         }
-        //updatePos();
+        parkinson();
         Turnos.text = " Turno"+turnos;
 
 
-        if (turnos <= 2)
+        if (turnos <= 7)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -152,6 +152,41 @@ public class Dardos : MonoBehaviour
         return t * t * (3f - 2f * t);
     }
 
+    void parkinson()
+    {
+        Dictionary<Mode, posRot> positions = new Dictionary<Mode, posRot>();
+
+        positions[Mode.Main] = new posRot(
+            new Vector3(
+                0, 0, -20),
+            Quaternion.Euler(0, 0, 0));
+
+        positions[Mode.MainMotion] = new posRot(
+            new Vector3(
+               Mathf.Sin(Time.time * MainMotionSpeed) * MainMotionDistance,
+               Mathf.Cos(Time.time * MainMotionSpeed) * MainMotionDistance,
+               -20
+            ),
+            Quaternion.Euler(0, 0, 0));
+        if (HachaActual != null)
+        {
+            positions[Mode.Dart] = new posRot(HachaActual.transform.position + dartOffset, Quaternion.Euler(dartAngle));
+        }
+        else
+        {
+            positions[Mode.Dart] = new posRot(Vector3.zero, Quaternion.Euler(Vector3.zero));
+        }
+
+        Vector3 finalPos;
+        Quaternion finalRot;
+
+        finalPos = Vector3.Lerp(positions[last].pos, positions[current].pos, progress);
+        finalRot = Quaternion.Lerp(positions[last].rot, positions[current].rot, progress);
+
+        transform.position = finalPos;
+        transform.rotation = finalRot;
+    }
+
     struct posRot
     {
         public Vector3 pos;
@@ -211,9 +246,7 @@ public class Dardos : MonoBehaviour
     {
 
         Score score = new Score();
-
         Vector2 offset = new Vector2((pos - scoringValue.center).x, (pos - scoringValue.center).y);
-
         if (offset.magnitude < scoringValue.BE2xRadius)
         {
             score.Number = 25;
@@ -226,15 +259,26 @@ public class Dardos : MonoBehaviour
             score.scoreMultiplier = Score.ScoreMultiplier.x1;
             return score;
         }
+        else if (offset.magnitude < scoringValue.max3X && offset.magnitude > scoringValue.min3X)
+        {
+            score.scoreMultiplier = Score.ScoreMultiplier.x3;
+        }
+        else if (offset.magnitude < scoringValue.max2X && offset.magnitude > scoringValue.min2X)
+        {
+            score.scoreMultiplier = Score.ScoreMultiplier.x2;
+        }
+        else if (offset.magnitude > scoringValue.max2X)
+        {
+            score.scoreMultiplier = Score.ScoreMultiplier.x1;
+            score.Number = 0;
+            return score;
+        }
         else
         {
-
             score.scoreMultiplier = Score.ScoreMultiplier.x1;
-
         }
 
-        //Valores de los puntajes
-
+       
 
         float angle = Vector2.Angle(Vector2.up, offset.normalized);//(desde,haasta)
 
