@@ -27,7 +27,7 @@ public class GameSetupController : MonoBehaviour
             }
         }
 
-
+        //GameObject Beerpong = PhotonNetwork.Instantiate("Beerpong", new Vector3(32.5f,0,33.6f), Quaternion.identity);
 
     }
 
