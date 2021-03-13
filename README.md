@@ -11,3 +11,8 @@ La tecnología usada para desarrollar Ragnarok-bar fue el motor de videojuegos U
 ## Capturas de pantalla
 ### Menu
 ![Menu](https://user-images.githubusercontent.com/48640697/111044723-43697b80-8418-11eb-85e8-cb3377b7a815.jpg)
+## Juego
+
+![Captura](https://user-images.githubusercontent.com/48640697/111044819-cd194900-8418-11eb-935e-0bd3d2682ea8.png)
+
+![Captura2](https://user-images.githubusercontent.com/48640697/111044823-d30f2a00-8418-11eb-9435-3ecc19708d55.png)
